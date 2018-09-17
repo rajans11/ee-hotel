@@ -1,0 +1,25 @@
+#git ignore
+/.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+/logs/
+*/logs/
+out/
+.DS_Store
+target/
+*.dll
+*.stackdump
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr

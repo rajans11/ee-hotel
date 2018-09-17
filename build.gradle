@@ -1,0 +1,29 @@
+apply plugin: "java"
+apply plugin: "idea"
+
+group = 'EqualExperts-Test'
+version = '1.0-SNAPSHOT'
+
+project.ext.sourceCompatibility = 1.8
+project.ext.targetCompatibility = 1.8
+
+repositories {
+    maven {
+        url "http://repo.bodar.com/"
+        mavenCentral()
+    }
+}
+
+dependencies {
+    compile group: 'info.cukes', name: 'cucumber-java8', version:'1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-junit', version:'1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-core', version:'1.2.5'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version:'3.8.1'
+    compile group: 'org.springframework', name: 'spring-context', version:'5.0.2.RELEASE'
+    compile group: 'org.springframework', name: 'spring-beans', version:'5.0.2.RELEASE'
+    compile group: 'org.springframework', name: 'spring-test', version:'5.0.2.RELEASE'
+    compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.25'
+    compile group: 'net.masterthought', name: 'cucumber-reporting', version:'0.0.24'
+    testCompile group: 'info.cukes', name: 'cucumber-spring', version:'1.2.5'
+    testCompile group: 'info.cukes', name: 'cucumber-jvm-deps', version:'1.0.5'
+}
