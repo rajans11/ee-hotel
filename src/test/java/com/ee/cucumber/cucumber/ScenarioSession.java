@@ -7,8 +7,9 @@ public class ScenarioSession {
 
     private Map<String, Object> sessionData = new HashMap<String, Object>();
 
-    public void putData(String key, Object value) {
+    public ScenarioSession putData(String key, Object value) {
         sessionData.put(key, value);
+        return this;
     }
 
     public Object getData(String key) {

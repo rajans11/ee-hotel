@@ -67,22 +67,22 @@ public class BookingsSteps extends BaseSteps implements En {
             String checkin = data.get("checkin");
             String checkout = data.get("checkout");
 
-            scenarioSession.putData(FIRST_NAME.getValue(), firstName);
-            scenarioSession.putData(LAST_NAME.getValue(), lastName);
-            scenarioSession.putData(TOTALPRICE.getValue(), totalPrice);
-            scenarioSession.putData(DEPOSIT.getValue(), depositPaid);
-            scenarioSession.putData(CHECKIN.getValue(), checkin);
-            scenarioSession.putData(CHECKOUT.getValue(), checkout);
+            scenarioSession.putData(FIRST_NAME.getValue(), firstName)
+                           .putData(LAST_NAME.getValue(), lastName)
+                           .putData(TOTALPRICE.getValue(), totalPrice)
+                           .putData(DEPOSIT.getValue(), depositPaid)
+                           .putData(CHECKIN.getValue(), checkin)
+                           .putData(CHECKOUT.getValue(), checkout);
 
             BookingsPage bookingsPage = new BookingsPage(driver);
 
-            bookingsPage.enterFirstName(firstName);
-            bookingsPage.enterLastName(lastName);
-            bookingsPage.enterTotalPrice(totalPrice);
-            bookingsPage.selectDeposit(String.valueOf(depositPaid));
-            bookingsPage.enterCheckinDate(checkin);
-            bookingsPage.enterCheckOutDate(checkout);
-            bookingsPage.saveBooking();
+            bookingsPage.enterFirstName(firstName)
+                        .enterLastName(lastName)
+                        .enterTotalPrice(totalPrice)
+                        .selectDeposit(String.valueOf(depositPaid))
+                        .enterCheckinDate(checkin)
+                        .enterCheckOutDate(checkout)
+                        .saveBooking();
         });
 
         Then("^I should see my booking$", () -> {

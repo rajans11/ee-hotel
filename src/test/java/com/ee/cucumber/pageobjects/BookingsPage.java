@@ -54,37 +54,45 @@ public class BookingsPage extends AbstractPage {
         return bookingsBox.isDisplayed();
     }
 
-    public void enterFirstName(String text){
+    public BookingsPage enterFirstName(String text){
         type(firstNameField, text);
+        return this;
     }
 
-    public void enterLastName(String text){
+    public BookingsPage enterLastName(String text){
         type(lastNameField, text);
+        return this;
     }
 
-    public void enterTotalPrice(String text){
+    public BookingsPage enterTotalPrice(String text){
         type(priceField, text);
+        return this;
     }
 
-    public void selectDeposit(String text){
+    public BookingsPage selectDeposit(String text){
         select(depositDropdown, text);
+        return this;
     }
 
-    public void enterCheckinDate(String text){
+    public BookingsPage enterCheckinDate(String text){
         type(checkinCalendar, text);
+        return this;
     }
 
-    public void enterCheckOutDate(String text){
+    public BookingsPage enterCheckOutDate(String text){
         type(checkoutCalendar, text);
+        return this;
     }
 
-    public void saveBooking(){
+    public BookingsPage saveBooking(){
         clickAndWait(saveButton, 5);
+        return this;
     }
 
-    public void deleteBooking(){
+    public BookingsPage deleteBooking(){
         List<WebElement> deleteButtons  =  driver.findElements(deleteButton);
         clickAndWait(deleteButtons.get(deleteButtons.size() - 1), 2);
+        return this;
     }
 
     private String getLatestBookingRow(){
